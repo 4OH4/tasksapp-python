@@ -5,10 +5,9 @@ version: "3.7"
 
 services:
   tasksapp-python:
-    build: .
-    # command: python app.py
-    # volumes:
-    #   - ./services/web/:/usr/src/app/
+    # build: .
+    image: 4oh4/tasksapp-python:1.0.0
+    container_name: tasksapp-python
     ports:
       - 5000:5000
     # env_file:

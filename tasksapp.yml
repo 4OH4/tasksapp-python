@@ -1,3 +1,19 @@
+# tasksapp-svc LoadBalancer Service
+# Enables the pods in a deployment to be accessible from outside the cluster
+apiVersion: v1
+kind: Service
+metadata:
+  name: tasksapp-svc
+spec:
+  selector:
+    app: tasksapp
+  ports:
+    - protocol: "TCP"
+      port: 8080
+      targetPort: 5000
+  type: LoadBalancer
+
+---
 # tasksapp Deployment
 # Defines the deployment of the app running in a pod on any worker node
 apiVersion: apps/v1

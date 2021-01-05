@@ -1,3 +1,18 @@
+# mongo Service
+# Makes the mongo pod accessible from within the cluster, but not from outside
+# Uses default service (ClusterIP)
+apiVersion: v1
+kind: Service
+metadata:
+  name: mongo
+spec:
+  selector:
+    app: mongo
+  ports:
+    - port: 27017
+      targetPort: 27017
+
+---
 # mongo Deployment
 # Creates a single instance of the MongoDB server
 apiVersion: apps/v1
