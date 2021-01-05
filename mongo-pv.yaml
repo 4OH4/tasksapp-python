@@ -1,0 +1,13 @@
+# mongo-pv PersistentVolume
+# Creates a 256 MB volume, to be made available to the mongo container
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: mongo-pv
+spec:
+  capacity:
+    storage: 256Mi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: /tmp/db

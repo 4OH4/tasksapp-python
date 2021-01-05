@@ -1,0 +1,12 @@
+# mongo-pvc PersistentVolumeClaim
+# Used to claim/obtain the persistent storage, and can be mounted in the mongo container
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: mongo-pvc
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 256Mi
