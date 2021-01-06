@@ -4,7 +4,7 @@ from bson.objectid import ObjectId
 import socket
 
 app = Flask(__name__)
-app.config["MONGO_URI"] = "mongodb://mongo:27017/dev"
+app.config["MONGO_URI"] = "mongodb://mongo:27017/dev"  # the hostname 'mongo' here must match the metadata name in the mongo service
 app.config['JSONIFY_PRETTYPRINT_REGULAR'] = True
 mongo = PyMongo(app)
 db = mongo.db
