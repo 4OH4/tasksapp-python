@@ -4,6 +4,18 @@ Template app for Python-MongoDB integration in Docker and Kubernetes.
 
 This repository consists of files that are explained better in this article: https://medium.com/@varunkumar032/deploy-your-first-flask-mongodb-app-on-kubernetes-8f5a33fa43b4
 
+## Build Docker image
+
+If using the local repository: (also update image reference in `tasksapp.yaml`)
+
+    eval $(minikube docker-env)
+    docker build -t hello-python:latest .
+    
+Otherwise:
+
+    docker build -t 4oh4/hello-python:latest .
+    docker push 4oh4/hello-python:latest
+
 ## Google Cloud GKE initial setup
 
 From command line, with [Google Cloud SDK](https://cloud.google.com/sdk/docs/install) installed:
